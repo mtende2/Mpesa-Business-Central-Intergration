@@ -3,6 +3,7 @@ codeunit 50100 "MPESA API Mgt."
     Access = Public;
 
     var
+
         Base64Convert: Codeunit "Base64 Convert";
         TokenCacheLbl: Label 'MPESA-AccessToken', Locked = true;
         TokenExpiryLbl: Label 'MPESA-AccessTokenExpiry', Locked = true;
