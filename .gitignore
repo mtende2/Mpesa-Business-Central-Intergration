@@ -1,0 +1,8 @@
+.alpackages/
+.snapshots/
+*.app
+rad.json
+*.g.xlf
+.vscode/settings.json
+node_modules/
+local.settings.json

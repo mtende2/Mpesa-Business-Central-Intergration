@@ -1,0 +1,28 @@
+{
+  "id": "f2cfd3fb-b299-4b21-995b-7e545f2c9b84",
+  "name": "M-Pesa Payments for Business Central",
+  "publisher": "Mtende Geoffrey Shikuku",
+  "version": "1.0.0.0",
+  "brief": "Collect and auto-post M-Pesa (Safaricom Daraja) payments in Business Central.",
+  "description": "Sends M-Pesa STK Push payment requests from posted sales invoices, receives STK and C2B PayBill confirmations through a Business Central API, matches payments to customers and invoices, and posts them as applied customer payments.",
+  "privacyStatement": "",
+  "EULA": "",
+  "help": "",
+  "url": "https://github.com/mtende2",
+  "logo": "",
+  "dependencies": [],
+  "screenshots": [],
+  "platform": "24.0.0.0",
+  "application": "24.0.0.0",
+  "idRanges": [
+    { "from": 50100, "to": 50149 }
+  ],
+  "resourceExposurePolicy": {
+    "allowDebugging": true,
+    "allowDownloadingSource": true,
+    "includeSourceInSymbolFile": true
+  },
+  "runtime": "13.0",
+  "target": "Cloud",
+  "features": [ "TranslationFile" ]
+}
