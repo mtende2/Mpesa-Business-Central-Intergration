@@ -55,21 +55,6 @@ Daraja posts unauthenticated JSON to a public URL, while Business Central APIs n
 - **Extensibility.** Integration events (`OnBeforeResolveAccountReference`, `OnBeforePostMpesaPayment`, `OnAfterPostMpesaPayment` and others) let partners change matching or posting without modifying this app.
 - **Safe batch posting.** IDs are collected first, then each payment posts inside `Codeunit.Run` after a `Commit`, so a failure rolls back only that payment and records `GetLastErrorText()`.
 
-## Setup
-
-1. Create a Daraja app at <https://developer.safaricom.co.ke> and note the consumer key, consumer secret, short code and passkey. The sandbox test short code is `174379`.
-2. In Business Central, create a **Bank Account** for the M-Pesa float and a **No. Series** for payments.
-3. Open **M-Pesa Setup**, then:
-   - choose the environment and enter the short code
-   - enter the three credentials
-   - enter the callback URL (`https://<function-app>/api/stkCallback?key=<RELAY_SHARED_KEY>`)
-   - choose the bank account and number series
-   - turn on **Auto Post Payments**
-4. Click **Test Connection**, then **Create Auto-Post Job**.
-5. Deploy `/relay` as an Azure Function (Node 18+). Then register an Entra app in Business Central (**Microsoft Entra Applications**) and give it the `MPESA ALL` and `D365 BASIC` permission sets.
-6. Register the C2B confirmation URL with Daraja (`/mpesa/c2b/v1/registerurl`) pointing to `https://<function-app>/api/c2bConfirmation?key=<RELAY_SHARED_KEY>`.
-
-Requires Business Central 2024 release wave 1 (v24) or later, because it uses `SecretText`, `IsolatedStorage` and the `No. Series` codeunit.
 
 ## Testing in a sandbox
 
